@@ -5,7 +5,7 @@ api = 2
 
 ; Projects
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.5"
+projects[ctools][version] = "1.9"
 
 projects[panels][subdir] = "contrib"
 projects[panels][version] = "3.4"
