@@ -13,7 +13,7 @@ function ting_infomedia_get_article($id) {
     $factory = ting_get_request_factory();
   }
   catch( TingClientException $e ) {
-    watchdog($e->message);
+    watchdog($e->getMessage());
   }
 
   $request = $factory->getInfomediaArticleRequest();
@@ -21,7 +21,13 @@ function ting_infomedia_get_article($id) {
   $request->setFaust($id);
  
   ting_infomedia_add_user_creds($request);
-  $ret = $request->parse(ting_execute($request->getRequest()));
+  try {
+    $ret = $request->parse(ting_execute($request->getRequest()));
+  }
+  catch(TingClientException $e){
+    watchdog('infomedia', $e->getMessage(),array(), WATCHDOG_ERROR);
+  }
+
 
   return $ret;
 }
