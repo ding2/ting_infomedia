@@ -16,5 +16,5 @@ projects[virtual_field][version] = "1.2"
 projects[ting][type] = "module"
 projects[ting][download][type] = "git"
 projects[ting][download][url] = "git@github.com:ding2/ting.git"
-projects[ting][download][tag] = "7.x-2.3.1-rc1"
+projects[ting][download][tag] = "7.x-2.3.1-rc2"
 
